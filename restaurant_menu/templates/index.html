@@ -15,7 +15,9 @@
   {% if row.meal_type == meal_type.0 %}
   <div>
     {% if row.status == 1 %}
-    <h4>{{ row.meal }}</h4>
+    <a href="{% url 'menu_item_detail' row.pk %}">
+      <h4>{{ row.meal }}</h4>
+    </a>
     <p>{{ row.desctiption }}</p>
     <p>{{ row.price }}</p>
     {% else %}
