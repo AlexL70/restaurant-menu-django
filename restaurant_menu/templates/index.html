@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Restaurant Menu</title>
-  </head>
 
-  <body>
-    <h1>Restaurant Menu</h1>
-    <h3>{{ meals }}</h3>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurant Menu</title>
+</head>
+
+<body>
+  <h1>Restaurant Menu</h1>
+  {% for meal_type in meal_types %}
+  <h3>{{ meal_type.1 }}</h3>
+  {% for row in item_list%}
+  <div>
+    <h4>{{ row.meal }}</h4>
+    <p>{{ row.desctiption }}</p>
+    <p>{{ row.price }}</p>
+  </div>
+  {% endfor %}
+  {% endfor %}
+</body>
+
 </html>
