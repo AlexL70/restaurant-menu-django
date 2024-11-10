@@ -12,11 +12,20 @@
   {% for meal_type in meal_types %}
   <h3>{{ meal_type.1 }}</h3>
   {% for row in item_list%}
+  {% if row.meal_type == meal_type.0 %}
   <div>
+    {% if row.status == 1 %}
     <h4>{{ row.meal }}</h4>
     <p>{{ row.desctiption }}</p>
     <p>{{ row.price }}</p>
+    {% else %}
+    <del>
+      <h4>{{ row.meal }}</h4>
+      <p>{{ row.desctiption }}</p>
+    </del>
+    {% endif %}
   </div>
+  {% endif %}
   {% endfor %}
   {% endfor %}
 </body>
